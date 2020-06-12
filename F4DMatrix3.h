@@ -18,24 +18,24 @@ namespace F4DEngine {
 		// Operators overload
 		// With other matrix
 		F4DMatrix3& operator=(const F4DMatrix3& m);
-		F4DMatrix3 operator+(const F4DMatrix3& m);
+		F4DMatrix3 operator+(const F4DMatrix3& m) const;
 		void operator+=(const F4DMatrix3& m);
-		F4DMatrix3 operator*(const F4DMatrix3& m);
+		F4DMatrix3 operator*(const F4DMatrix3& m) const;
 		void operator*=(const F4DMatrix3& m);
 		// With float
-		F4DMatrix3 operator*(const float s);
+		F4DMatrix3 operator*(const float s) const;
 		void operator*=(const float s);
 		// With vector
-		F4DVector3 operator*(const F4DVector3& v);
+		F4DVector3 operator*(const F4DVector3& v) const;
 		// Methods
-		F4DMatrix3 getInverseOfMatrix();
-		F4DMatrix3 getTransposeOfMatrix();
+		F4DMatrix3 getInverseOfMatrix() const;
+		F4DMatrix3 getTransposeOfMatrix() const;
 		void invertMatrix();
 		void show();
 		void setMatrixAsIdentityMatrix();
 		void setMatrixAsInverseOfGivenMatrix(const F4DMatrix3& m);
 		void setMatrixAsTransposeOfGivenMatrix(const F4DMatrix3& m);
-		F4DVector3 transformVectorByMatrix(const F4DVector3& v);
+		F4DVector3 transformVectorByMatrix(const F4DVector3& v) const;
 		void transposeMatrix();
 	};
 }

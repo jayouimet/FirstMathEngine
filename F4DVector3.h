@@ -1,6 +1,5 @@
 #pragma once
 
-#include <math.h>
 #include <iostream>
 
 namespace F4DEngine {
@@ -21,31 +20,32 @@ namespace F4DEngine {
       // Equality operator
       F4DVector3& operator=(const F4DVector3& v);
       // Addition operator
-      F4DVector3 operator+(const F4DVector3& v);
+      F4DVector3 operator+(const F4DVector3& v) const;
       void operator+=(const F4DVector3& v);
       // Substraction operator
-      F4DVector3 operator-(const F4DVector3& v);
+      F4DVector3 operator-(const F4DVector3& v) const;
       void operator-=(const F4DVector3& v);
       // Dot operator
-      float operator*(const F4DVector3& v);
-      float dot(const F4DVector3& v);
+      float operator*(const F4DVector3& v) const;
+      float dot(const F4DVector3& v) const;
       // Cross operator
-      F4DVector3 cross(const F4DVector3& v);
-      F4DVector3 operator%(const F4DVector3& v);
+      F4DVector3 cross(const F4DVector3& v) const;
+      F4DVector3 operator%(const F4DVector3& v) const;
       void operator%=(const F4DVector3& v);
 #pragma endregion
 #pragma region Vector with Floating number Operators
       // Multiplication operator
-      F4DVector3 operator*(const float& f);
+      F4DVector3 operator*(const float& f) const;
       void operator*=(const float& f);
       // Division operator
-      F4DVector3 operator/(const float& f);
+      F4DVector3 operator/(const float& f) const;
       void operator/=(const float& f);
 #pragma endregion
 #pragma endregion
 #pragma region Methods
-      float magnitude();
+      float magnitude() const;
       void normalize();
+      F4DVector3 rotateVectorAboutAngleAndAxis(float uAngle, F4DVector3& uAxis);
       void show();
 #pragma endregion
    };

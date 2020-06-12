@@ -148,6 +148,7 @@
     <ClInclude Include="F4DMatrix3.h" />
     <ClInclude Include="F4DQuaternion.h" />
     <ClInclude Include="F4DVector3.h" />
+    <ClInclude Include="Constants.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

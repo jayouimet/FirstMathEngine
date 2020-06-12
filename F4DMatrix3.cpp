@@ -54,7 +54,7 @@ namespace F4DEngine {
       matrixData[8] = m.matrixData[8];
       return *this;
    }
-   F4DMatrix3 F4DMatrix3::operator+(const F4DMatrix3& m)
+   F4DMatrix3 F4DMatrix3::operator+(const F4DMatrix3& m) const
    {
       F4DMatrix3 n;
       n.matrixData[0] = matrixData[0] + m.matrixData[0];
@@ -84,7 +84,7 @@ namespace F4DEngine {
       matrixData[5] += m.matrixData[5];
       matrixData[8] += m.matrixData[8];
    }
-   F4DMatrix3 F4DMatrix3::operator*(const F4DMatrix3& m)
+   F4DMatrix3 F4DMatrix3::operator*(const F4DMatrix3& m) const
    {
       return F4DMatrix3(
          matrixData[0] * m.matrixData[0] + matrixData[3] * m.matrixData[1] + matrixData[6] * m.matrixData[2],
@@ -130,7 +130,7 @@ namespace F4DEngine {
       matrixData[5] = temp2;
       matrixData[8] = temp3;
    }
-   F4DMatrix3 F4DMatrix3::operator*(const float s)
+   F4DMatrix3 F4DMatrix3::operator*(const float s) const
    {
       return F4DMatrix3(
          matrixData[0] * s, matrixData[3] * s, matrixData[6] * s,
@@ -152,7 +152,7 @@ namespace F4DEngine {
       matrixData[5] *= s; 
       matrixData[8] *= s;
    }
-   F4DVector3 F4DMatrix3::operator*(const F4DVector3& v)
+   F4DVector3 F4DMatrix3::operator*(const F4DVector3& v) const
    {
       return F4DVector3(
          matrixData[0] * v.x + matrixData[3] * v.y + matrixData[6] * v.z, 
@@ -160,13 +160,13 @@ namespace F4DEngine {
          matrixData[2] * v.x + matrixData[5] * v.y + matrixData[8] * v.z
       );
    }
-   F4DMatrix3 F4DMatrix3::getInverseOfMatrix()
+   F4DMatrix3 F4DMatrix3::getInverseOfMatrix() const
    {
       F4DMatrix3 result;
       result.setMatrixAsInverseOfGivenMatrix(*this);
       return result;
    }
-   F4DMatrix3 F4DMatrix3::getTransposeOfMatrix()
+   F4DMatrix3 F4DMatrix3::getTransposeOfMatrix() const
    {
       F4DMatrix3 result;
       result.setMatrixAsTransposeOfGivenMatrix(*this);
@@ -240,7 +240,7 @@ namespace F4DEngine {
       matrixData[5] = m.matrixData[7];
       matrixData[8] = m.matrixData[8];
    }
-   F4DVector3 F4DMatrix3::transformVectorByMatrix(const F4DVector3& v)
+   F4DVector3 F4DMatrix3::transformVectorByMatrix(const F4DVector3& v) const
    {
       return (*this) * v;
    }
